@@ -19,6 +19,16 @@ const db = {
             "type" : "image",
             "content" : "https://lh3.googleusercontent.com/ogw/ADea4I65wo3jJ_DKgfdE-AyW51o_71Zv_gC7uAZF-w-J=s32-c-mo"
         },
+    ],
+    sectionButtons : [
+        {
+            "type" : "text",
+            "content" : "Buscar con Google"
+        },
+        {
+            "type" : "text",
+            "content" : "Me siento con suerte"
+        }
     ]
 }
 
@@ -31,6 +41,7 @@ function loadElements(){
     addNavButtons();
     addTitle();
     addInput();
+    addSectionButtons();
 }
 
 const addNavButtons = ( ) => {
@@ -109,4 +120,37 @@ const addInput = () => {
     container.appendChild(rightIconContainer);
     container.appendChild(input);
     mainSection.appendChild(container);
+}
+
+
+const addSectionButtons = () => {
+
+    const buttonContainer = document.createElement('div');
+    buttonContainer.id = 'section__buttonContainer'
+
+    db.sectionButtons.forEach( buttonInfo => {
+        const newButton = document.createElement('button');
+        newButton.appendChild(document.createTextNode(buttonInfo.content));
+        newButton.classList.add('section__button')
+
+        buttonContainer.appendChild(newButton);
+    });
+
+    const bottomText = document.createElement('p');
+    bottomText.appendChild(document.createTextNode('Ofrecido por Google en: '));
+    const linkEn = document.createElement('a');
+    linkEn.href = '#'
+    linkEn.text = 'English'
+    const linkEs = document.createElement('a');
+    linkEs.href = '#'
+    linkEs.text = 'Español (Latinoamérica)'
+
+    bottomText.append(linkEn, ' ', linkEs)
+
+    bottomText.id = 'section__bottomText';
+
+    buttonContainer.appendChild(bottomText);
+
+    mainSection.appendChild(buttonContainer);
+
 }

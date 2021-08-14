@@ -124,3 +124,50 @@
     cursor: pointer;
 }
 
+#section__buttonContainer{
+    width: 100%;
+    margin: 2vw 0px;
+    display: grid;
+
+    grid-template-columns: max-content max-content;
+    grid-template-rows: 2.5vw;
+
+    justify-content: center;
+    column-gap: 1vw;
+    row-gap: 2vw;
+}
+
+.section__button{
+
+    background-color: #f8f9fa;
+    outline: none;
+    border: 1px solid transparent;
+
+    color: #444;
+    padding: 0 1vw;
+    font-size: 1vw;
+    border-radius: 5px;
+}
+
+.section__button:hover{
+    color: #000;
+    border: 1px solid #dadce0;
+}
+
+#section__bottomText{
+    grid-column: 1/ 3;
+    color: #444;
+    font-size: 1vw;
+    text-align: center;
+
+}
+
+#section__bottomText a{
+    margin: 0px 0.3vw;
+    text-decoration: none;
+    cursor: pointer;
+}
+#section__bottomText a:hover{
+    text-decoration: underline;
+
+}
