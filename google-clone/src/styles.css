@@ -34,6 +34,7 @@ body, input, button{
 }
 
 .nav__roundButton{
+    margin-left: 1vw;
     border-radius: 50%;
     box-sizing: content-box;
     display: flex;
@@ -41,17 +42,24 @@ body, input, button{
     align-items: center;
 }
 .nav__roundButton:hover{
-
+    background-color: #eee;
     box-shadow: 0px 0px 0px 3px #eee;
 
 }
 .nav__roundButton img{
     border-radius: 50%;
+    width: 2.5vw;
     
 }
 
 .nav__button:hover{
     text-decoration: underline;
+}
+
+.nav__svg{
+    width: 1.8vw;
+    height: 1.8vw;
+    fill: #555;
 }
 
 /* ------------------------------------------------------------------------ */
