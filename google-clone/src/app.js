@@ -1,4 +1,3 @@
-
 const db = {
     title : 'Google',
     titleColor : ['lightblue', 'red', 'yellow', 'lightblue', 'green', 'red'],
@@ -29,11 +28,20 @@ const db = {
             "type" : "text",
             "content" : "Me siento con suerte"
         }
-    ]
+    ],
+    footerButtonsLeft : [
+        "Sobre Google",
+        "Publicidad",
+        "Negocios",
+        "Cómo funciona la Búsqueda"
+    ],
+    footerButtonsRight : [ "Privacidad","Condiciones","Preferencias" ]
 }
 
-topNav = document.getElementById('nav-container');
-mainSection = document.getElementById('main-container');
+
+const topNav = document.getElementById('nav-container');
+const mainSection = document.getElementById('main-container');
+const footer = document.getElementById('footer-container');
 
 document.body.onload = loadElements;
 
@@ -42,6 +50,7 @@ function loadElements(){
     addTitle();
     addInput();
     addSectionButtons();
+    addFooter();
 }
 
 const addNavButtons = ( ) => {
@@ -153,4 +162,42 @@ const addSectionButtons = () => {
 
     mainSection.appendChild(buttonContainer);
 
+}
+
+const addFooter = () => {
+
+    const topSection = document.createElement('section');
+    topSection.id = 'footer__topSection'
+    const topText = document.createElement('p');
+    topText.append(document.createTextNode('Venezuela'));
+    topSection.appendChild(topText);
+
+    const botSection = document.createElement('section');
+    const leftDiv = document.createElement('div');
+    const rightDiv = document.createElement('div');
+    botSection.id = 'footer__botSection';
+    leftDiv.classList.add('footer__button-container')
+    rightDiv.classList.add('footer__button-container')
+
+    db.footerButtonsLeft.forEach( text => {
+        const button = document.createElement('button');
+        button.append(document.createTextNode(text));
+        button.classList.add('footer__button');
+
+
+        leftDiv.appendChild(button);
+    });
+
+    db.footerButtonsRight.forEach( text => {
+        const button = document.createElement('button');
+        button.append(document.createTextNode(text));
+        button.classList.add('footer__button');
+
+
+        rightDiv.appendChild(button);
+    });
+
+    botSection.append(leftDiv, rightDiv);
+
+    footer.append(topSection, botSection);
 }
