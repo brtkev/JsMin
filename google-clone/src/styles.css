@@ -83,7 +83,6 @@ body, input, button{
     box-shadow: 0px 0px 5px -2px #222;
     overflow-y: scroll;
     padding: 1vw 1.2vw;
-
 }
 
 #googleApps-container::-webkit-scrollbar{
@@ -185,13 +184,15 @@ body, input, button{
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0px 0px 5px -2px #222;
+    display: flex;
+    flex-direction: column;
 }
 
 #googleAccount-managementSec{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 1px solid #ddd8;
+    border-bottom: 1px solid #ccc8;
 }
 
 #googleAccount-managementSec img{
@@ -210,7 +211,7 @@ body, input, button{
     color: #888;
 }
 
-#googleAccount-manageButton{
+.googleAccount-manageButton{
     margin-top: 1.2vw;
     margin-bottom: 1.7vw;
     padding: .6vw 1.2vw;
@@ -220,11 +221,97 @@ body, input, button{
     color: #444;
     cursor: pointer;
 }
-#googleAccount-manageButton:hover{
+.googleAccount-manageButton:hover{
     background-color: #ddd4;
 }
 
+/* ---------------*/
 
+#googleAccount-accountsSec{
+    border-bottom: 1px solid #ccc8;
+}
+
+.googleAccount__changeAccount-button{
+    width: 100%;
+    padding: .8vw 2vw;
+    /* margin: .8vw 2vw; */
+    display: grid;
+    grid-template-columns: 2.5vw min-content;
+    grid-template-rows: min-content min-content;
+    column-gap: .7vw;
+    cursor: pointer;
+}
+
+.googleAccount__changeAccount-button:hover{
+    background-color: #ddd4;
+}
+
+.googleAccount__changeAccount-button img{
+    width: 2.5vw;
+    border-radius: 50%;
+    grid-row: 1/ span 2;
+}
+
+.googleAccount__changeAccount-button .name{
+    text-align: left;
+    color: #444;
+}
+.googleAccount__changeAccount-button .mail{
+    text-align: left;
+    font-size: 12px;
+    color: #666;
+}
+
+#googleAccount__addAcount-button{
+    display: flex;
+    align-items: center;
+    color: #444;
+    padding: 1.317vw 2vw;
+}
+#googleAccount__addAcount-button span{
+    font-size: 1.5vw;
+    margin-left: .6vw;
+    margin-right: .4vw;
+    color: #666;
+}
+
+/*--------------------- */
+
+#googleAccount__closeSes{
+    display: flex;
+    padding: 1vw 0;
+
+    width: 100%;
+    justify-content: center;
+    border-bottom: 1px solid #ccc8;
+}
+
+#googleAccount__closeSes-button{
+    border-radius: 5px;
+    padding: .7vw 1.7vw;
+    margin: 0;
+}
+
+/*-----------------------*/
+#googleAccount__privacy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vw;
+
+}
+
+#googleAccount__privacy button{
+    font-size: 12px;
+    color: #666;
+    border-radius: 5px;
+    padding: 0 .5vw;
+    cursor: pointer;
+}
+
+#googleAccount__privacy button:hover{
+    background-color: #ddd4;
+}
 
 
 /* ------------------------------------------------------------------------ */

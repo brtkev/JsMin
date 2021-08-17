@@ -147,16 +147,77 @@ const accountMenu = () => {
     mail.classList.add('mail')
 
     let button = document.createElement('button');
-    button.id = 'googleAccount-manageButton';
+    button.classList.add('googleAccount-manageButton');
     button.innerText = "Gestionar tu cuenta de Google";
 
     management.append(image, name, mail, button);
 
+    // ----------------------------------------------------------------
 
+    const accounts = document.createElement('section');
+    accounts.id = 'googleAccount-accountsSec';
+
+    for(let i = 0; i < 1; i++){
+        const button = document.createElement('button');
+        button.classList.add('googleAccount__changeAccount-button')
+
+        let image = document.createElement('img');
+        image.src = "https://lh3.googleusercontent.com/ogw/ADea4I65wo3jJ_DKgfdE-AyW51o_71Zv_gC7uAZF-w-J=s83-c-mo";
+        image.alt = "userprofile button"
     
+        let name = document.createElement('p');
+        name.innerText = "name1 lastName1";
+        name.classList.add('name');
+        let mail = document.createElement('p');
+        mail.innerText = "doejohn123@gmail.com";
+        mail.classList.add('mail');
+
+        button.append(image, name, mail);
+        accounts.appendChild(button);
+    }
+
+    button = document.createElement('button');
+    button.classList.add('googleAccount__changeAccount-button')
+    button.id = 'googleAccount__addAcount-button';
+
+    // image = document.createElement('img');
+    // image.src = "https://lh3.googleusercontent.com/ogw/ADea4I65wo3jJ_DKgfdE-AyW51o_71Zv_gC7uAZF-w-J=s83-c-mo";
+    // image.alt = "userprofile button"
+
+    image = '<span class="material-icons">person_add_alt</span>';
+
+    let text = document.createElement('p');
+    text.innerText = "Añadir otra cuenta";
+
+    button.insertAdjacentHTML('afterbegin', image);
+    button.append(text);
+    accounts.appendChild(button);
+
+    //---------------------------------------------------------------------
 
 
-    container.append(management);
+    let closeSession = document.createElement('section');
+    closeSession.id = 'googleAccount__closeSes'
+    button = document.createElement('button');
+    button.classList.add('googleAccount-manageButton');
+    button.id = 'googleAccount__closeSes-button'
+    button.innerText = 'Cerrar sesión en todas las cuentas';
+    
+    closeSession.appendChild(button);
+
+    //---------------------------------------------------------------------
+
+    let privacy = document.createElement('section');
+    privacy.id = 'googleAccount__privacy'
+
+    let politicBtn = document.createElement('button');
+    politicBtn.innerText = "Política de Privacidad";
+    let termsBtn = document.createElement('button');
+    termsBtn.innerText = "Términos del Servicio";
+
+    privacy.append(politicBtn, document.createTextNode('•'), termsBtn);
+
+    container.append(management, accounts, closeSession, privacy);
     document.body.append(container);
 
 }
