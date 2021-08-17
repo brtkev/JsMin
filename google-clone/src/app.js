@@ -51,6 +51,7 @@ function loadElements(){
     addInput();
     addSectionButtons();
     addFooter();
+    // googleApps();
 }
 
 const addNavButtons = ( ) => {
@@ -70,12 +71,57 @@ const addNavButtons = ( ) => {
         }else if(buttonInfo.type === 'svg'){
             buttonElement.classList.add('nav__roundButton');
             buttonElement.insertAdjacentHTML('afterbegin', '<svg class="nav__svg" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>')
+            buttonElement.id = 'button-googleApps'
+            buttonElement.addEventListener('click', googleApps);
         }
         
         topNav.appendChild(buttonElement);
 
     } );
 
+}
+
+const googleApps = () => {
+    let container = document.getElementById('googleApps-container');
+    if(container){
+        return container;
+    }
+
+    container = document.createElement('div');
+    const ul = document.createElement('ul');
+    container.id = 'googleApps-container';
+    ul.id = 'googleApps-ul';
+
+    for(let i = 0; i < 32; i++ ){
+        const li = document.createElement('li');
+        const image = document.createElement('img');
+        image.src = "https://lh3.googleusercontent.com/ogw/ADea4I65wo3jJ_DKgfdE-AyW51o_71Zv_gC7uAZF-w-J=s32-c-mo";
+        image.alt = "app icon"
+
+        const name = document.createElement('p');
+        name.append(document.createTextNode('App'))
+
+        li.append(image, name);
+        ul.appendChild(li);
+    }
+
+    const moreButton = document.createElement('button');
+    moreButton.id = 'googleApps__more';
+    moreButton.innerText = "Más de Google";
+
+    container.append(ul, moreButton);
+    document.body.append(container);
+
+    const closeMenu = ev => {
+        console.log('bodyclick')
+        if(!ev.target.closest('#googleApps-container') && !ev.target.closest('#button-googleApps')){
+            document.querySelector('#googleApps-container').remove();
+            document.body.removeEventListener('click', closeMenu);
+        }              
+    }
+    document.body.addEventListener('click', closeMenu);
+
+    return container;
 }
 
 const addTitle = () => {
