@@ -51,7 +51,6 @@ function loadElements(){
     addInput();
     addSectionButtons();
     addFooter();
-    // accountMenu();
 }
 
 const addNavButtons = ( ) => {
@@ -61,6 +60,7 @@ const addNavButtons = ( ) => {
         
         if(buttonInfo.type === "text"){
             buttonElement.appendChild(document.createTextNode(buttonInfo.content)); 
+            buttonElement.classList.add('nav__text');
         }else if(buttonInfo.type === "image"){
             buttonElement.classList.add('nav__roundButton');
             let image = document.createElement('img');
@@ -183,13 +183,16 @@ const accountMenu = () => {
     button.classList.add('googleAccount__changeAccount-button')
     button.id = 'googleAccount__addAcount-button';
 
-    image = '<span class="material-icons">person_add_alt</span>';
+// image = '<span class="material-icons">person_add_alt</span>';
+    image = document.createElement('img');
+    image.src = "https://fonts.gstatic.com/s/i/materialiconsoutlined/person_add_alt/v10/24px.svg"
+    image.alt = "person add logo";
 
     let text = document.createElement('p');
     text.innerText = "Añadir otra cuenta";
 
-    button.insertAdjacentHTML('afterbegin', image);
-    button.append(text);
+    // button.insertAdjacentHTML('afterbegin', image);
+    button.append(image, text);
     accounts.appendChild(button);
 
     //---------------------------------------------------------------------

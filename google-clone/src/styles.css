@@ -67,6 +67,10 @@ body, input, button{
     fill: #555;
 }
 
+.nav__text{
+    font-size: 1vw;
+}
+
 /* ----------------------------------------------------------------------- */
 
 #googleApps-container{
@@ -139,11 +143,11 @@ body, input, button{
     border-radius: 50%;
     width: 3.5vw;
     height: auto;
-    margin: 0px 1.5vw;
-    margin-top: .5vw;
-    margin-bottom: .5vw;
+    margin: .5vw 1.5vw;
+
 }
 #googleApps-container p{
+    font-size: 1vw;
     margin-bottom: .2vw;
 }
 
@@ -204,11 +208,11 @@ body, input, button{
 
 #googleAccount-managementSec .name{
     margin-top: 1.2vw;
-    font-size: 16px;
+    font-size: 1.2vw;
 }
 #googleAccount-managementSec .mail{
     margin-top: .2vw;
-    font-size: 15px;
+    font-size: 1.1vw;
     color: #888;
 }
 
@@ -218,7 +222,7 @@ body, input, button{
     padding: .6vw 1.2vw;
     border-radius: 30px;
     border: 1px solid #ddd;
-    font-size: 15px;
+    font-size: 1.1vw;
     color: #444;
     cursor: pointer;
 }
@@ -255,11 +259,12 @@ body, input, button{
 
 .googleAccount__changeAccount-button .name{
     text-align: left;
+    font-size: 1vw;
     color: #444;
 }
 .googleAccount__changeAccount-button .mail{
     text-align: left;
-    font-size: 12px;
+    font-size: .9vw;
     color: #666;
 }
 
@@ -269,11 +274,14 @@ body, input, button{
     color: #444;
     padding: 1.317vw 2vw;
 }
-#googleAccount__addAcount-button span{
-    font-size: 1.5vw;
+#googleAccount__addAcount-button p{
+    font-size: 1vw;
+}
+#googleAccount__addAcount-button img{
+    width: 1.5vw;
     margin-left: .6vw;
     margin-right: .4vw;
-    color: #666;
+    filter: invert(53%) sepia(0%) saturate(29%) hue-rotate(151deg) brightness(88%) contrast(86%);
 }
 
 /*--------------------- */
@@ -304,7 +312,7 @@ body, input, button{
 }
 
 #googleAccount__privacy button{
-    font-size: 12px;
+    font-size: .9vw;
     color: #666;
     border-radius: 5px;
     padding: 0 .5vw;
