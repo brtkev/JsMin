@@ -51,7 +51,7 @@ function loadElements(){
     addInput();
     addSectionButtons();
     addFooter();
-    accountMenu();
+    // accountMenu();
 }
 
 const addNavButtons = ( ) => {
@@ -67,6 +67,8 @@ const addNavButtons = ( ) => {
             image.src = "https://lh3.googleusercontent.com/ogw/ADea4I65wo3jJ_DKgfdE-AyW51o_71Zv_gC7uAZF-w-J=s32-c-mo";
             image.alt = "userprofile button"
             buttonElement.appendChild(image); 
+            buttonElement.id = 'button-googleAccount';
+            buttonElement.addEventListener('click', accountMenu);
             
         }else if(buttonInfo.type === 'svg'){
             buttonElement.classList.add('nav__roundButton');
@@ -90,6 +92,7 @@ const googleApps = () => {
     container = document.createElement('div');
     const ul = document.createElement('ul');
     container.id = 'googleApps-container';
+    container.classList.add('menu-scrollbar');
     ul.id = 'googleApps-ul';
 
     for(let i = 0; i < 32; i++ ){
@@ -113,7 +116,6 @@ const googleApps = () => {
     document.body.append(container);
 
     const closeMenu = ev => {
-        console.log('bodyclick')
         if(!ev.target.closest('#googleApps-container') && !ev.target.closest('#button-googleApps')){
             document.querySelector('#googleApps-container').remove();
             document.body.removeEventListener('click', closeMenu);
@@ -130,6 +132,7 @@ const accountMenu = () => {
 
     container = document.createElement('div');
     container.id = 'googleAccount-container';
+    container.classList.add('menu-scrollbar')
 
 
     const management = document.createElement('section');
@@ -157,7 +160,7 @@ const accountMenu = () => {
     const accounts = document.createElement('section');
     accounts.id = 'googleAccount-accountsSec';
 
-    for(let i = 0; i < 1; i++){
+    for(let i = 0; i < 4; i++){
         const button = document.createElement('button');
         button.classList.add('googleAccount__changeAccount-button')
 
@@ -166,10 +169,10 @@ const accountMenu = () => {
         image.alt = "userprofile button"
     
         let name = document.createElement('p');
-        name.innerText = "name1 lastName1";
+        name.innerText = `name${i} lastName${i}`;
         name.classList.add('name');
         let mail = document.createElement('p');
-        mail.innerText = "doejohn123@gmail.com";
+        mail.innerText = `doejohn${i}@gmail.com`;
         mail.classList.add('mail');
 
         button.append(image, name, mail);
@@ -179,10 +182,6 @@ const accountMenu = () => {
     button = document.createElement('button');
     button.classList.add('googleAccount__changeAccount-button')
     button.id = 'googleAccount__addAcount-button';
-
-    // image = document.createElement('img');
-    // image.src = "https://lh3.googleusercontent.com/ogw/ADea4I65wo3jJ_DKgfdE-AyW51o_71Zv_gC7uAZF-w-J=s83-c-mo";
-    // image.alt = "userprofile button"
 
     image = '<span class="material-icons">person_add_alt</span>';
 
@@ -219,6 +218,16 @@ const accountMenu = () => {
 
     container.append(management, accounts, closeSession, privacy);
     document.body.append(container);
+
+    const closeMenu = ev => {
+        if(!ev.target.closest('#googleAccount-container') && !ev.target.closest('#button-googleAccount')){
+            document.querySelector('#googleAccount-container').remove();
+            document.body.removeEventListener('click', closeMenu);
+        }              
+    }
+    document.body.addEventListener('click', closeMenu);
+
+    return container;
 
 }
 
