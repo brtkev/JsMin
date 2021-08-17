@@ -51,7 +51,7 @@ function loadElements(){
     addInput();
     addSectionButtons();
     addFooter();
-    // googleApps();
+    accountMenu();
 }
 
 const addNavButtons = ( ) => {
@@ -122,6 +122,43 @@ const googleApps = () => {
     document.body.addEventListener('click', closeMenu);
 
     return container;
+}
+
+const accountMenu = () => {
+
+    let container;
+
+    container = document.createElement('div');
+    container.id = 'googleAccount-container';
+
+
+    const management = document.createElement('section');
+    management.id = 'googleAccount-managementSec'
+
+    let image = document.createElement('img');
+    image.src = "https://lh3.googleusercontent.com/ogw/ADea4I65wo3jJ_DKgfdE-AyW51o_71Zv_gC7uAZF-w-J=s83-c-mo";
+    image.alt = "userprofile button"
+
+    let name = document.createElement('p');
+    name.innerText = "name lastName";
+    name.classList.add('name');
+    let mail = document.createElement('p');
+    mail.innerText = "johndoe123@gmail.com";
+    mail.classList.add('mail')
+
+    let button = document.createElement('button');
+    button.id = 'googleAccount-manageButton';
+    button.innerText = "Gestionar tu cuenta de Google";
+
+    management.append(image, name, mail, button);
+
+
+    
+
+
+    container.append(management);
+    document.body.append(container);
+
 }
 
 const addTitle = () => {

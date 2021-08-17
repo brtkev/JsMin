@@ -1,6 +1,11 @@
 *{
-    margin: 0px;
-    padding: 0px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
 }
 
 body, input, button{
@@ -65,7 +70,7 @@ body, input, button{
 /* ----------------------------------------------------------------------- */
 
 #googleApps-container{
-    z-index: 100;
+    z-index: 1001;
     position: absolute;
     width: calc(23vw - 2vw);
     height: calc(65vh - 2vw);
@@ -163,6 +168,64 @@ body, input, button{
 #googleApps__more:hover{
     background-color: #eee;
 }
+
+
+/* ------------------------------------------------------------------------ */
+
+
+#googleAccount-container{
+    z-index: 1001;
+    position: absolute;
+    width: 26vw;
+    height: 70vh;
+    margin: 10vh 1vw;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px -2px #222;
+}
+
+#googleAccount-managementSec{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #ddd8;
+}
+
+#googleAccount-managementSec img{
+    margin-top: 2vw;
+    width: 5.5vw;
+    border-radius: 50%;
+}
+
+#googleAccount-managementSec .name{
+    margin-top: 1.2vw;
+    font-size: 16px;
+}
+#googleAccount-managementSec .mail{
+    margin-top: .2vw;
+    font-size: 15px;
+    color: #888;
+}
+
+#googleAccount-manageButton{
+    margin-top: 1.2vw;
+    margin-bottom: 1.7vw;
+    padding: .6vw 1.2vw;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    color: #444;
+    cursor: pointer;
+}
+#googleAccount-manageButton:hover{
+    background-color: #ddd4;
+}
+
+
+
 
 /* ------------------------------------------------------------------------ */
 
