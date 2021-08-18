@@ -1,3 +1,7 @@
+#userCustom
+.vscode/
+
+
 # Logs
 logs
 *.log
