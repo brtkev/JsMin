@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Navegation from "./navegation"
 
 const Container = props => {
@@ -7,9 +8,12 @@ const Container = props => {
         <div>
             <Head>
                 <title>Nextjs Project</title>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" />
             </Head>
             <Navegation />
-            {props.children}
+            <div className="container p-4">
+                {props.children}
+            </div>
         </div>
     )
 }
