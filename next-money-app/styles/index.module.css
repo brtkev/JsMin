@@ -1,0 +1,90 @@
+#main-container{
+    display: flex;
+    padding: 0 5vw;
+}
+
+#introduction-sec{
+    margin: 5vw 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+#welcome-text{
+    /* color: var(--dark-letter-color); */
+    color: #aaa;
+    font-size: calc(1em + .5vw);
+    margin-bottom: .5vw;
+}
+
+#description-text{
+    color: var(--letter-color);
+
+    font-size: calc(2em + 1.5vw);
+    line-height: calc(1em + .5vw);
+    margin-bottom: .5vw;
+}
+
+.text-secondary-color{
+    color: var(--second-color)
+}
+
+#small-text{
+    font-size: calc(.5em + .5vw);
+    color: var(--darker-letter-color);
+    margin-bottom: calc(1.5em + 1.5vw);
+}
+
+#play-store-button{
+    cursor: pointer;
+    margin: 0 auto;
+    font-size: calc(.7em + .5vw);
+    color: var(--sub-color);
+    width: max-content;
+    padding: calc(.2em + .5vw) calc(.5em + .5vw);
+    background-color: var(--letter-color);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform .5s linear;
+}
+
+#play-store-button:hover{
+    transform: scale(1.05);
+}
+
+#playstore-icon{
+    height: calc(.5em + 1vw);
+    margin-right: .5em;
+}
+
+#decor-sec{
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+#rectangle{
+    position: relative;
+    width: 50%;
+    height: calc(100% - 4vw);
+    border-radius: 15px;
+    background-color: #fff;
+    
+}
+#rectangle::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: #888;
+    transform: translateX(-80%) rotate(-10deg);
+    transform-origin: bottom left;
+}
+
+

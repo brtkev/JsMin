@@ -1,15 +1,19 @@
 *{
     margin: 0;
     padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
     font-family: 'Arial', sans-serif;
     box-sizing: border-box;
 }
 
 :root{
 
-    --primary-color : #228;
+    --primary-color : #114;
     --sub-color : #020202;
-    --second-color: #44f;
+    --second-color: #228;
     --letter-color: #fff;
     --dark-letter-color: #888;
+    --darker-letter-color: #444;
 }
