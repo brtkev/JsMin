@@ -8,6 +8,7 @@
     box-sizing: border-box;
 }
 
+
 :root{
 
     --primary-color : #114;
@@ -16,4 +17,9 @@
     --letter-color: #fff;
     --dark-letter-color: #888;
     --darker-letter-color: #444;
+    --black-color: #040404;
+
+    --normal-font-size : calc(1em + .5vw);
+    --small-font-size : calc(.5em + .5vw);
+    --big-font-size : calc(2em + 1.5vw);
 }

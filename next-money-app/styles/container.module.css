@@ -2,8 +2,8 @@
 
 
 #main-container{
-    width: 100vw;
-    height: 100vh;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, var(--sub-color) 50%, var(--primary-color) 100%);
+    width: 100%;
+    min-height: 100vh;
+    background: var(--black-color);
+    background: linear-gradient(180deg, var(--black-color) 50%, var(--primary-color) 100%);
 }

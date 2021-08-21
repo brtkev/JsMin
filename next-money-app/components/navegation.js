@@ -8,7 +8,7 @@ const navLinks = [
     { 
         'text' :'Inicio', 'path' : '/'
     }, {
-        'text' : 'Como funciona', 'path' : '/doc'
+        'text' : 'Como funciona', 'path' : '/docs'
     },{
         'text' : 'Quienes somos', 'path' : '/about'
     },{
