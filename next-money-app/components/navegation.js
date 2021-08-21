@@ -19,7 +19,6 @@ const navLinks = [
 ]
 
 export default function Navegation() {
-
     const router = useRouter();
 
     const navItem = (link, index) => {

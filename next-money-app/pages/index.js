@@ -2,21 +2,9 @@ import Container from "../components/container";
 
 import styles from "../styles/index.module.css";
 
-const cardsRes = [
-    {
-        "title" : "Usuarios activos", "count" : 300, "icon" : { "src" : "https://dummyimage.com/40x40/0000/fff.png&text=logo", "alt" : "logo" }
-    },{
-        "title" : "Descargas", "count" : 300, "icon" : { "src" : "https://dummyimage.com/40x40/0000/fff.png&text=logo", "alt" : "logo" }
-    },{
-        "title" : "transacciones", "count" : 1000, "icon" : { "src" : "https://dummyimage.com/40x40/0000/fff.png&text=logo", "alt" : "logo" }
-    }
-]
+const Index = ({cards}) => {
 
-const Index = () => {
-
-
-    const infoCards = cardsRes.map( (value, index) => {
-
+    const cardComponent = (value, index) => {
         return(
             <div className={styles["info-card"]} key={index}>
                 <div className={styles['info-card__image-container']}>
@@ -26,10 +14,10 @@ const Index = () => {
                     <p>{value.title}</p>
                     <p>{value.count} {value.title.split(' ')[0]}</p>
                 </div>
-                { index !== cardsRes.length-1 ? <div className={ styles['separator']}></div> : undefined}
+                { index !== cards.length-1 ? <div className={ styles['separator']}></div> : undefined}
             </div>
         )
-    });
+    };
 
     return(
         <Container>
@@ -51,11 +39,27 @@ const Index = () => {
                     </section>
                 </div>
                 <div id={styles['row-2']}>
-                    {infoCards}
+                    {cards.map(cardComponent)}
                 </div>
             </div>
         </Container>
     )
+}
+
+export async function getStaticProps(context) {
+    
+    const cards = [
+        {
+            "title" : "Usuarios activos", "count" : 300, "icon" : { "src" : "https://dummyimage.com/40x40/0000/fff.png&text=logo", "alt" : "logo" }
+        },{
+            "title" : "Descargas", "count" : 300, "icon" : { "src" : "https://dummyimage.com/40x40/0000/fff.png&text=logo", "alt" : "logo" }
+        },{
+            "title" : "transacciones", "count" : 1000, "icon" : { "src" : "https://dummyimage.com/40x40/0000/fff.png&text=logo", "alt" : "logo" }
+        }
+    ]
+    return{
+        props : {cards}
+    }
 }
 
 export default Index;
