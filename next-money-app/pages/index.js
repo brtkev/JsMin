@@ -48,15 +48,8 @@ const Index = ({cards}) => {
 
 export async function getStaticProps(context) {
     
-    const cards = [
-        {
-            "title" : "Usuarios activos", "count" : 300, "icon" : { "src" : "https://dummyimage.com/40x40/0000/fff.png&text=logo", "alt" : "logo" }
-        },{
-            "title" : "Descargas", "count" : 300, "icon" : { "src" : "https://dummyimage.com/40x40/0000/fff.png&text=logo", "alt" : "logo" }
-        },{
-            "title" : "transacciones", "count" : 1000, "icon" : { "src" : "https://dummyimage.com/40x40/0000/fff.png&text=logo", "alt" : "logo" }
-        }
-    ]
+    const res = await fetch("http://localhost:3000/api/appStatistics");
+    const cards = await res.json();
     return{
         props : {cards}
     }
