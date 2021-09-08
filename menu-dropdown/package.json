@@ -1,0 +1,12 @@
+{
+  "name": "menu-dropdown",
+  "version": "1.0.0",
+  "description": "dropdown design",
+  "main": "index.js",
+  "scripts": {
+    "sass" : "sass ./src/styles.scss:./dist/styles.min.css --no-source-map -s compressed --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "brt.kev",
+  "license": "ISC"
+}

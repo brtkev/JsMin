@@ -1,0 +1,31 @@
+@use './styles/navegation';
+@use './styles/menuDropdown';
+@use './styles/variables' as *;
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: $background-color;
+}
+
+button{
+    border: none;
+    outline: none;
+    background: none;
+}
+
+
+#indicator{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $contrast-background-color;
+}

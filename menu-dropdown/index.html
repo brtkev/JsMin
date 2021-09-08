@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="dist/styles.min.css">
+    <title>menu-dropdown</title>
+</head>
+<body>
+    <nav id="navegation">
+        <ul id="nav-list">
+            <li class="nav-li"><button class="nav-button"><strong>Product</strong></button></li>
+            <li class="nav-li"><button class="nav-button"><strong>Features</strong></button></li>
+            <li class="nav-li"><button id="resourcesButton" class="nav-button"><strong>Resources</strong></button></li>
+            <li class="nav-li"><button class="nav-button"><strong>Pricing</strong></button></li>
+            <li class="nav-li"><button class="nav-button"><strong>About</strong></button></li>
+        </ul>
+    </nav>
+    <div id="dropdown">
+        <div class="dropdown-box">
+            <h3 class="box-title">R E S O U R C E S</h3>
+            <ul class="box-list">
+                <li class="box-item"><button class="box-button"><img class="button-icon" src="./assets/code-icon.png" alt="icon"><strong>Blog</strong></button></li>
+                <li class="box-item"><button class="box-button"><img class="button-icon" src="./assets/code-icon.png" alt="icon"><strong>Reports</strong></button></li>
+                <li class="box-item"><button class="box-button"><img class="button-icon" src="./assets/code-icon.png" alt="icon"><strong>Media</strong></button></li>
+                <li class="box-item"><button class="box-button"><img class="button-icon" src="./assets/code-icon.png" alt="icon"><strong>Case Studies</strong></button></li>
+                <li class="box-item"><button class="box-button"><img class="button-icon" src="./assets/code-icon.png" alt="icon"><strong>Podcasts</strong></button></li>
+            </ul>
+        </div>
+        <div class="dropdown-box">
+            <h3 class="box-title">D E V E L O P E R S</h3>
+            <ul class="box-list">
+                <li class="box-item"><button class="box-button"><img class="button-icon" src="./assets/code-icon.png" alt="icon"><strong>Documentation</strong></button></li>
+                <li class="box-item"><button class="box-button"><img class="button-icon" src="./assets/code-icon.png" alt="icon"><strong>API</strong></button></li>
+                <li class="box-item"><button class="box-button"><img class="button-icon" src="./assets/code-icon.png" alt="icon"><strong>Videos and  tutorials</strong></button></li>
+                <li class="box-item"><button class="box-button"><img class="button-icon" src="./assets/code-icon.png" alt="icon"><strong>Forum</strong></button></li>
+                <li class="box-item"><button class="box-button"><img class="button-icon" src="./assets/code-icon.png" alt="icon"><strong>Support</strong></button></li>
+            </ul>
+        </div>
+        <div class="dropdown-box" id="article-box">
+            <div id="article-image">
+                <img  src="./assets/github-logo.png" alt="content">
+            </div>
+            <p id="article-content"><strong>Why and how serverless computing helps teams scale up</strong></p>
+            <p id="article-author"><strong>Christopher Gehlot</strong></p>
+            <p id="article-date">Sep 7 - 4 min read</p>
+        </div>
+    </div>
+    <div id="indicator" >Click resources! :)</div>
+
+</body>
+<script src="src/index.js"></script>
+</html>
