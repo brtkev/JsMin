@@ -1,4 +1,8 @@
+# dropdown menu 
 
+(watch this project)[https://brtkev.github.io/JsMin/menu-dropdown/]
+
+(original design)[https://www.uidesigndaily.com/posts/sketch-menu-dropdown-dark-theme-day-1437]
 
 
 ## click resources button without it closing on me

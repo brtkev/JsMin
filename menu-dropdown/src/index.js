@@ -5,10 +5,15 @@ document.body.onload = () => {
     addDropdownButtonEvents();
 }
 
+let lastActiveDropdownButton = undefined;
+
 const openDropdown = (ev) => {
     ev.currentTarget.classList.toggle('active')
     let dropdown = document.getElementById('dropdown');
     dropdown.classList.toggle('active');
+
+    if(lastActiveDropdownButton) lastActiveDropdownButton.toggle('active');
+    lastActiveDropdownButton = undefined;
 
     if(dropdown.classList.contains('active'))document.body.addEventListener('click', closeDropdown );
     else document.body.removeEventListener('click', closeDropdown);
@@ -28,7 +33,7 @@ const addDropdownButtonEvents = () => {
     }
 }
 
-let lastActiveDropdownButton = undefined;
+
 
 const activateButtonStyle = (ev) => {
     ev.currentTarget.classList.toggle('active');
