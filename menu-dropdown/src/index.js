@@ -1,13 +1,45 @@
 document.body.onload = () => {
 
-    let resourcesButton = document.getElementById('resourcesButton');
-    resourcesButton.addEventListener('click', openDropdown);
+    let buttons = document.body.querySelectorAll('.nav-button');
+    [...buttons].forEach( button => button.id === 'resourcesButton'
+    ? button.addEventListener('click', openDropdown)
+    : button.addEventListener('click', youDidNotJustDoThat));
+
     addDropdownButtonEvents();
+}
+
+let count = 0;
+let resourcesClicked = false;
+const responses = [
+    "Comming soon ❤",
+    "we all make mistakes, now click resources :)",
+    "nop, that's the wrong button",
+    "...",
+    "you only had to do one thing",
+    "WHY? I told you to click resources!!!",
+    "😡",
+    "ok I don't care anymore just do as you please"
+]
+let indicator = document.getElementById('indicator');
+const youDidNotJustDoThat = (ev) => {
+    if(count < responses.length && !resourcesClicked){
+        indicator.innerText = responses[count];
+    }else if(resourcesClicked && count === 0){
+        indicator.innerText = responses[count];
+    }
+    count++;
 }
 
 let lastActiveDropdownButton = undefined;
 
 const openDropdown = (ev) => {
+    if(count > 3 && !resourcesClicked){
+        indicator.innerText = "see? it wasn't that hard";
+    }else if(!resourcesClicked){
+        indicator.innerText = "nice! :)";
+    }
+    resourcesClicked = true;
+
     ev.currentTarget.classList.toggle('active')
     let dropdown = document.getElementById('dropdown');
     dropdown.classList.toggle('active');
